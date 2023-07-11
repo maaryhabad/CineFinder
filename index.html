@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CineFinder</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CineFinder</h1>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Pesquisar filmes...">
+      <button id="search-button">Buscar</button>
+    </div>
+    <div id="results-container">
+      <div class="movie-item">
+        <h2>Nome do Filme</h2>
+        <p>Ano de Lançamento: 2022</p>
+        <p>Gênero: Ação</p>
+        <p>Classificação: 8.5</p>
+        <p>Sinopse: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod luctus mauris, ac fermentum lectus facilisis sed.</p>
+      </div>
+      <div class="movie-item">
+        <h2>Outro Filme</h2>
+        <p>Ano de Lançamento: 2021</p>
+        <p>Gênero: Comédia</p>
+        <p>Classificação: 7.9</p>
+        <p>Sinopse: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod luctus mauris, ac fermentum lectus facilisis sed.</p>
+      </div>
+    </div>
+    <div id="movie-details-container"></div>
+  </div>
+
+  <script src="views/app.js"></script>
+</body>
+</html>
