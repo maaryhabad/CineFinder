@@ -8,6 +8,7 @@ const searchInput = document.getElementById("search-input");
 const resultsContainer = document.getElementById("results-container");
 
 searchButton.onclick = () => {
+  resultsContainer.innerHTML = '';
   validator.inputValue = searchInput.value;
   validator.searchMovies(searchInput.value);
 };
@@ -16,6 +17,14 @@ function generateMovieItem(movie) {
   
   const movieItem = document.createElement("div");
   movieItem.classList.add("movie-item");
+
+  const movieDetails = document.createElement("div");
+  movieDetails.classList.add("movie-details");
+
+  const posterImg = document.createElement("img");
+  posterImg.src = movie.posterURL;
+  posterImg.classList.add("movie-poster");
+  posterImg.alt = `Poster do filme ${movie.title}`;
 
   const movieTitle = document.createElement("h2");
   movieTitle.innerHTML = `${movie.title}`;
@@ -32,11 +41,14 @@ function generateMovieItem(movie) {
   const plot = document.createElement("p");
   plot.innerHTML = `<strong>Sinopse:</strong> ${movie.plot}`;
 
-  movieItem.appendChild(movieTitle);
-  movieItem.appendChild(yearOfRelease);
-  movieItem.appendChild(genre);
-  movieItem.appendChild(rating);
-  movieItem.appendChild(plot);
+  movieItem.appendChild(posterImg);
+  movieItem.appendChild(movieDetails);
+
+  movieDetails.appendChild(movieTitle);
+  movieDetails.appendChild(yearOfRelease);
+  movieDetails.appendChild(genre);
+  movieDetails.appendChild(rating);
+  movieDetails.appendChild(plot);
 
   resultsContainer.appendChild(movieItem);
 }
