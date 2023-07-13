@@ -1,4 +1,5 @@
 import { Movie } from '../models/movie.js';
+import { generateMovieItem } from '../views/app.js';
 
 class searchViewModel {
     constructor() {
@@ -19,7 +20,10 @@ class searchViewModel {
             .then(response => response.json())
             .then(data => {
                 this.movies = data.results.map(movieData => new Movie(movieData));
-                console.log(this.movies);
+
+                this.movies.forEach( movie => {
+                    generateMovieItem(movie);
+                })
             })
             .catch(err => console.error(err));
         } catch (error) {
